@@ -36,7 +36,6 @@ export default class WeatherDashboard extends Component {
         return (
             <div>
                 <div>
-                    <p>{this.state.temp}</p>
                     <TodaysWeather
                     temp={this.state.temp}
                     city={this.state.city}
