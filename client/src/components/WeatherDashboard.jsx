@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import TodaysWeather from './TodaysWeather'
 import LocationImage from './LocationImage'
+import SearchBar from './SearchBar'
 
 export default class WeatherDashboard extends Component {
     state = {
@@ -33,17 +34,22 @@ export default class WeatherDashboard extends Component {
     render() {
         return (
             <div>
-                <p>{this.state.temp}</p>
-                <TodaysWeather
-                temp={this.state.temp}
-                city={this.state.city}
-                country={this.state.country}
-                forecast={this.state.forecast}
-                icon={this.state.icon}
-                /> 
-            </div>
-            <div>
-                <LocationImage/> 
+                <div>
+                    <p>{this.state.temp}</p>
+                    <TodaysWeather
+                    temp={this.state.temp}
+                    city={this.state.city}
+                    country={this.state.country}
+                    forecast={this.state.forecast}
+                    icon={this.state.icon}
+                    /> 
+                </div>
+                <div>
+                    <LocationImage/> 
+                </div>
+                <div>
+                    <SearchBar/>
+                </div>
             </div>
         )
     }
