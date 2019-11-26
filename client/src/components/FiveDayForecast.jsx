@@ -4,19 +4,21 @@ import axios from 'axios'
 export default class FiveDayForecast extends Component {
 
     state = {
-
+        forecast: []
     }
 
     componentDidMount() {
         this.getFiveDay()
     }
 
-    
-
-    filterFiveDay = () => {
-        this.state.list.map((i) => {
-            console.log(i.dt_txt)
+    filterFiveDay = (forecastList) => {
+        const filteredForecast = forecastList.filter((i) => {
+            if (i.dt_txt.includes('15:00:00')) {
+                return true;
+            }
+            return false
         })
+        return filteredForecast;
     }
 
     getFiveDay = () => {
@@ -24,7 +26,9 @@ export default class FiveDayForecast extends Component {
             .then((res) => {
                 console.log(res.data)
                 this.setState(res.data)
-                this.filterFiveDay()
+                const filteredForecast = this.filterFiveDay(res.data.list)
+                this.setState({forecast: filteredForecast})
+                console.log('filteredForecast', filteredForecast)
             })
     }
 
