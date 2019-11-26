@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import TodaysWeather from './TodaysWeather'
+import LocationImage from './LocationImage'
 
 export default class WeatherDashboard extends Component {
     state = {
@@ -40,6 +41,9 @@ export default class WeatherDashboard extends Component {
                 forecast={this.state.forecast}
                 icon={this.state.icon}
                 /> 
+            </div>
+            <div>
+                <LocationImage/> 
             </div>
         )
     }
