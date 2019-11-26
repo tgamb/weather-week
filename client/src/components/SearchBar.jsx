@@ -5,9 +5,9 @@ export default class SearchBar extends Component {
         userInput: '', 
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({userInput: event.target.value})
-      }
+    }
 
     render() {
         return (
@@ -17,7 +17,7 @@ export default class SearchBar extends Component {
                      name="userInput"
                      placeholder="Zip Code"
                      value={this.state.userInput}
-                     onChange={this.handleChange.bind(this)}
+                     onChange={this.handleChange}
                      />
                 </form>
             </div>
