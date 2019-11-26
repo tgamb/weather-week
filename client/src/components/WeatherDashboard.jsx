@@ -12,7 +12,8 @@ export default class WeatherDashboard extends Component {
         country:'',
         forecast: '',
         icon:'', 
-        zipCode: ''
+        zipCode: '', 
+        fiveDay: []
     }
 
     componentDidMount() {
@@ -40,6 +41,28 @@ export default class WeatherDashboard extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
             this.getWeather()
+            this.getFiveDay()
+    }
+
+    filterFiveDay = (forecastList) => {
+        const filteredForecast = forecastList.filter((i) => {
+            if (i.dt_txt.includes('15:00:00')) {
+                return true;
+            }
+            return false
+        })
+        return filteredForecast;
+    }
+
+    getFiveDay = () => {
+        axios.get(`http://api.openweathermap.org/data/2.5/forecast?zip=${this.state.zipCode},us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c`)
+            .then((res) => {
+                console.log(res.data)
+                // this.setState(res.data)
+                const filteredForecast = this.filterFiveDay(res.data.list)
+                this.setState({fiveDay: filteredForecast})
+                console.log('filteredForecast', filteredForecast)
+            })
     }
 
     render() {
@@ -72,7 +95,9 @@ export default class WeatherDashboard extends Component {
                     getWeather={this.getWeather}/>
                 </div> */}
                 <div>
-                    <FiveDayForeCast/>
+                    <FiveDayForeCast
+                    zipCode={this.state.zipCode}
+                    forecast={this.state.fiveDay}/>
                 </div>
             </div>
         )
