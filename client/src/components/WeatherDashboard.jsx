@@ -3,6 +3,7 @@ import axios from 'axios'
 import TodaysWeather from './TodaysWeather'
 import LocationImage from './LocationImage'
 import SearchBar from './SearchBar'
+import FiveDayForeCast from './FiveDayForecast'
 
 export default class WeatherDashboard extends Component {
     state = {
@@ -49,6 +50,9 @@ export default class WeatherDashboard extends Component {
                 </div>
                 <div>
                     <SearchBar/>
+                </div>
+                <div>
+                    <FiveDayForeCast/>
                 </div>
             </div>
         )
