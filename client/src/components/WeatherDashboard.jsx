@@ -33,7 +33,13 @@ export default class WeatherDashboard extends Component {
         return (
             <div>
                 <p>{this.state.temp}</p>
-                <TodaysWeather/> 
+                <TodaysWeather
+                temp={this.state.temp}
+                city={this.state.city}
+                country={this.state.country}
+                forecast={this.state.forecast}
+                icon={this.state.icon}
+                /> 
             </div>
         )
     }
