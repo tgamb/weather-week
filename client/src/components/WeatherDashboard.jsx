@@ -11,7 +11,8 @@ export default class WeatherDashboard extends Component {
         city:'',
         country:'',
         forecast: '',
-        icon:''
+        icon:'', 
+        zipCode: ''
     }
 
     componentDidMount() {
@@ -19,7 +20,7 @@ export default class WeatherDashboard extends Component {
     }
 
     getWeather = () => {
-        axios.get('http://api.openweathermap.org/data/2.5/weather?zip=30327,us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c')
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipCode},us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c`)
             .then((res) => {
                 console.log(res.data)
                 this.setState({
@@ -27,14 +28,33 @@ export default class WeatherDashboard extends Component {
                     city: res.data.name, 
                     country: res.data.sys.country, 
                     forecast: res.data.weather[0].description, 
-                    icon: res.data.weather[0].icon
+                    icon: res.data.weather[0].icon, 
                 })
             })
     }
     
+    handleChange = (event) => {
+        this.setState({zipCode: event.target.value})
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+            this.getWeather()
+    }
+
     render() {
         return (
             <div>
+                <div>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text"
+                     name="zipCode"
+                     placeholder="Zip Code"
+                     value={this.state.zipCode}
+                     onChange={this.handleChange}
+                     />
+                </form>
+                </div>
                 <div>
                     <TodaysWeather
                     temp={this.state.temp}
@@ -47,9 +67,10 @@ export default class WeatherDashboard extends Component {
                 <div>
                     <LocationImage/> 
                 </div>
-                <div>
-                    <SearchBar/>
-                </div>
+                {/* <div>
+                    <SearchBar
+                    getWeather={this.getWeather}/>
+                </div> */}
                 <div>
                     <FiveDayForeCast/>
                 </div>
