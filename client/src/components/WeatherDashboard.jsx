@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import TodaysWeather from './TodaysWeather'
 
 export default class WeatherDashboard extends Component {
     state = {
@@ -21,7 +22,7 @@ export default class WeatherDashboard extends Component {
     render() {
         return (
             <div>
-                
+                <TodaysWeather/> 
             </div>
         )
     }
