@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import HelloWorld from './components/HelloWorld.js'
 import WeatherDashboard from './components/WeatherDashboard'
-import './App.css';
+import './App.css'
+import './WeatherDashboard.css'
 
 function App() {
   return (

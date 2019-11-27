@@ -67,7 +67,7 @@ export default class WeatherDashboard extends Component {
 
     render() {
         return (
-            <div>
+            <div class="background">
                 <div>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text"
