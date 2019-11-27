@@ -68,15 +68,15 @@ export default class WeatherDashboard extends Component {
     render() {
         return (
             <div class="background">
-                <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text"
-                     name="zipCode"
-                     placeholder="Zip Code"
-                     value={this.state.zipCode}
-                     onChange={this.handleChange}
-                     />
-                </form>
+                <div class="formField">
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text"
+                        name="zipCode"
+                        placeholder="Zip Code"
+                        value={this.state.zipCode}
+                        onChange={this.handleChange}
+                        />
+                    </form>
                 </div>
                 <div>
                     <TodaysWeather
@@ -90,10 +90,6 @@ export default class WeatherDashboard extends Component {
                 <div>
                     <LocationImage/> 
                 </div>
-                {/* <div>
-                    <SearchBar
-                    getWeather={this.getWeather}/>
-                </div> */}
                 <div>
                     <FiveDayForeCast
                     zipCode={this.state.zipCode}
