@@ -6,9 +6,10 @@ export default class TodaysWeather extends Component {
         return (
             <div>
                 <div className="currentWeather">
-                    <p className="currentForecast">
+                    <div className="currentForecast">
+                        <img className="todaysImage" src="https://firebasestorage.googleapis.com/v0/b/weather-week.appspot.com/o/sunBehindClouds.svg?alt=media&token=b38867dd-49b2-48b0-b719-29c5ee08a454"/> 
                         {this.props.forecast}
-                    </p>
+                    </div>
                     <div className="separator"></div>
                 <div className="tempLocationContainer">
                     <p className="currentTemp">

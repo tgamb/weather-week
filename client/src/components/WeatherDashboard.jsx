@@ -12,6 +12,7 @@ export default class WeatherDashboard extends Component {
         forecast: '', 
         icon:'', 
         zipCode: '30327', 
+        date: '', 
         fiveDay: []
     }
 
