@@ -96,7 +96,7 @@ export default class WeatherDashboard extends Component {
                     /> 
                 </div>
                 <div>
-                    <LocationImage/> 
+                    {/* <LocationImage/>  */}
                 </div>
                 <div>
                     <FiveDayForeCast

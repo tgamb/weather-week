@@ -5,6 +5,7 @@ import WeatherDashboard from './components/WeatherDashboard'
 import './App.css'
 import './WeatherDashboard.css'
 import './TodaysWeather.css'
+import './FiveDayForecast.css'
 
 function App() {
   return (
