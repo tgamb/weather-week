@@ -4,11 +4,18 @@ export default class TodaysWeather extends Component {
     render() {
         return (
             <div>
-                <p>{this.props.temp}
-                    {this.props.city}
-                    {this.props.country}
-                    {this.props.forecast}
-                </p>
+                {/* <div className="todaysWeather"> */}
+                <div className="currentWeather">
+                    <p className="currentTemp">
+                        {this.props.forecast} | {this.props.temp} 
+                    </p>
+                <div className="currentLocation">
+                    <p>
+                        {this.props.city}, {this.props.country}
+                    </p>
+                </div>
+                </div>
+                {/* </div> */}
             </div>
         )
     }

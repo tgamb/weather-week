@@ -2,22 +2,21 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import TodaysWeather from './TodaysWeather'
 import LocationImage from './LocationImage'
-import SearchBar from './SearchBar'
 import FiveDayForeCast from './FiveDayForecast'
 
 export default class WeatherDashboard extends Component {
     state = {
-        temp:'',
-        city:'',
-        country:'',
-        forecast: '',
+        temp:'', 
+        city:'', 
+        country:'', 
+        forecast: '', 
         icon:'', 
-        zipCode: '', 
+        zipCode: '30327', 
         fiveDay: []
     }
 
     componentDidMount() {
-        this.getWeather()
+        this.getWeather() 
     }
 
     getWeather = () => {
@@ -67,8 +66,8 @@ export default class WeatherDashboard extends Component {
 
     render() {
         return (
-            <div class="background">
-                <div class="formField">
+            <div className="background">
+                <div className="formField">
                     <form onSubmit={this.handleSubmit}>
                         <input type="text"
                         name="zipCode"

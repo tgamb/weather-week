@@ -4,6 +4,7 @@ import HelloWorld from './components/HelloWorld.js'
 import WeatherDashboard from './components/WeatherDashboard'
 import './App.css'
 import './WeatherDashboard.css'
+import './TodaysWeather.css'
 
 function App() {
   return (
