@@ -11,12 +11,9 @@ export default class TodaysWeather extends Component {
                     </p>
                     <div className="separator"></div>
                 <div className="tempLocationContainer">
-                    {/* <p className="pipeSeparator">
-                        |
-                    </p> */}
                     <p className="currentTemp">
                         {/* {this.props.temp}  */}
-                        5
+                        75
                     </p>
                 <div className="currentLocation">
                     <p>
