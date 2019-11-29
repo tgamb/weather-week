@@ -1,24 +1,36 @@
-.todaysWeather {
-    display: flex;
-    flex-flow: column-reverse;
-}
-
 .currentWeather {
     display: flex; 
     font-family: 'Roboto';
     font-weight: 700; 
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 85px; 
+    margin-top: 25px; 
+}
+
+.tempLocationContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.separator {
+    display: inline;
+    border-left: 2px solid black;
+    height: 100px;
 }
 
 .currentTemp {
     display: flex; 
-    font-size: 30px; 
+    font-size: 80px; 
     margin-bottom: 0px;
     justify-content: center;
+}
 
+.currentForecast {
+    display: flex; 
+    font-size: 20px; 
+    margin-bottom: 0px;
+    justify-content: center;
 }
 
 .currentLocation {

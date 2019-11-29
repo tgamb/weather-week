@@ -64,10 +64,18 @@ export default class WeatherDashboard extends Component {
             })
     }
 
+    roundTemperature = () => {
+        Math.round(this.state.temp)
+        
+    }
+
     render() {
         return (
             <div className="background">
                 <div className="formField">
+                    <div className="appHeader">
+                        <h2>Weather Week</h2>
+                    </div>
                     <form onSubmit={this.handleSubmit}>
                         <input type="text"
                         name="zipCode"

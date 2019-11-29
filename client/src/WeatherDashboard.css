@@ -8,8 +8,16 @@
     margin-left: 50px;
 }
 
-form {
+/* form {
     display: flex; 
+    justify-content: flex-end;
+} */
+.appHeader {
+    margin-right: 175px;
+}
+
+.formField {
+    display: flex;
     justify-content: flex-end;
 }
 

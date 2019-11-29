@@ -2,12 +2,21 @@ import React, { Component } from 'react'
 
 export default class TodaysWeather extends Component {
     render() {
+
         return (
             <div>
-                {/* <div className="todaysWeather"> */}
                 <div className="currentWeather">
+                    <p className="currentForecast">
+                        {this.props.forecast}
+                    </p>
+                    <div className="separator"></div>
+                <div className="tempLocationContainer">
+                    {/* <p className="pipeSeparator">
+                        |
+                    </p> */}
                     <p className="currentTemp">
-                        {this.props.forecast} | {this.props.temp} 
+                        {/* {this.props.temp}  */}
+                        5
                     </p>
                 <div className="currentLocation">
                     <p>
@@ -15,7 +24,7 @@ export default class TodaysWeather extends Component {
                     </p>
                 </div>
                 </div>
-                {/* </div> */}
+                </div>
             </div>
         )
     }
