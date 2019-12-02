@@ -4,6 +4,27 @@ import TodaysWeather from './TodaysWeather'
 import LocationImage from './LocationImage'
 import FiveDayForeCast from './FiveDayForecast'
 
+const wiIcons = {
+    '01d': 'wi-day-sunny',
+    '01n': 'wi-night-clear',
+    '02d': 'wi-day-sunny-overcast',
+    '02n': 'wi-night-alt-partly-cloudy',
+    '03d': 'wi-day-cloudy',
+    '03n': 'wi-night-alt-cloudy',
+    '04d': 'wi-day-cloudy-high',
+    '04n': 'wi-night-alt-cloudy-high',
+    '09d': 'wi-day-sprinkle',
+    '09n': 'wi-night-alt-sprinkle',
+    '10d': 'wi-day-rain',
+    '10n': 'wi-night-alt-rain',
+    '11d': 'wi-day-thunderstorm',
+    '11n': 'wi-night-alt-thunderstorm',
+    '13d': 'wi-day-snow',
+    '13n': 'wi-night-alt-snow',
+    '50d': 'wi-day-fog',
+    '50n': 'wi-night-fog'
+  };
+
 export default class WeatherDashboard extends Component {
     state = {
         temp:'', 
@@ -15,7 +36,7 @@ export default class WeatherDashboard extends Component {
         date: '', 
         fiveDay: []
     }
-
+    
     componentDidMount() {
         this.getWeather() 
     }
@@ -24,12 +45,14 @@ export default class WeatherDashboard extends Component {
         axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipCode},us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c`)
             .then((res) => {
                 console.log(res.data)
+
+                const weatherIcon = res.data.weather[0].icon
                 this.setState({
                     temp: res.data.main.temp, 
                     city: res.data.name, 
                     country: res.data.sys.country, 
-                    forecast: res.data.weather[0].description, 
-                    icon: res.data.weather[0].icon, 
+                    forecast: res.data.weather[0].main, 
+                    icon: wiIcons[weatherIcon], 
                 })
             })
     }
