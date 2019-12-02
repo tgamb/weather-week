@@ -32,13 +32,14 @@ export default class WeatherDashboard extends Component {
         country:'', 
         forecast: '', 
         icon:'', 
-        zipCode: '', 
+        zipCode: '30327', 
         date: '', 
         fiveDay: []
     }
     
     componentDidMount() {
         this.getWeather() 
+        this.getFiveDay()
     }
 
     getWeather = () => {
