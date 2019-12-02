@@ -47,6 +47,7 @@ export default class WeatherDashboard extends Component {
                 console.log(res.data)
 
                 const weatherIcon = res.data.weather[0].icon
+                
                 this.setState({
                     temp: res.data.main.temp, 
                     city: res.data.name, 
