@@ -43,7 +43,7 @@ export default class WeatherDashboard extends Component {
     }
 
     getWeather = () => {
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipCode},us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipCode},us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c`)
             .then((res) => {
                 console.log(res.data)
 
@@ -89,7 +89,7 @@ export default class WeatherDashboard extends Component {
     }
 
     getFiveDay = () => {
-        axios.get(`http://api.openweathermap.org/data/2.5/forecast?zip=${this.state.zipCode},us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c`)
+        axios.get(`https://api.openweathermap.org/data/2.5/forecast?zip=${this.state.zipCode},us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c`)
             .then((res) => {
                 console.log(res.data)
                 // this.setState(res.data)
