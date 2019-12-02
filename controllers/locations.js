@@ -19,7 +19,7 @@ locationRouter.get('/:locationId', (req, res) => {
 //create 
 locationRouter.post('/', (req, res) => {
     locationApi.createLocation(req.body)
-        .then((newLocations) => {
+        .then((newLocation) => {
             res.json(newLocation)
         })
 })

@@ -32,7 +32,7 @@ export default class WeatherDashboard extends Component {
         country:'', 
         forecast: '', 
         icon:'', 
-        zipCode: '30327', 
+        zipCode: '', 
         date: '', 
         fiveDay: []
     }
@@ -47,7 +47,7 @@ export default class WeatherDashboard extends Component {
                 console.log(res.data)
 
                 const weatherIcon = res.data.weather[0].icon
-                
+
                 this.setState({
                     temp: res.data.main.temp, 
                     city: res.data.name, 
@@ -58,6 +58,14 @@ export default class WeatherDashboard extends Component {
             })
     }
     
+    // newZipCode = this.state.zipCode
+
+    postZipCode = () => {
+        axios.post('/api/locations', {
+            zipCode: this.state.zipCode
+        })
+    }
+
     handleChange = (event) => {
         this.setState({zipCode: event.target.value})
     }
@@ -66,6 +74,7 @@ export default class WeatherDashboard extends Component {
         event.preventDefault()
             this.getWeather()
             this.getFiveDay()
+            this.postZipCode()
     }
 
     filterFiveDay = (forecastList) => {
