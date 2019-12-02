@@ -48,9 +48,9 @@ export default class WeatherDashboard extends Component {
                 console.log(res.data)
 
                 const weatherIcon = res.data.weather[0].icon
-
+                const roundedTemp = Math.round(res.data.main.temp)
                 this.setState({
-                    temp: res.data.main.temp, 
+                    temp: roundedTemp, 
                     city: res.data.name, 
                     country: res.data.sys.country, 
                     forecast: res.data.weather[0].main, 

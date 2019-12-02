@@ -32,6 +32,7 @@ export default class FiveDayForecast extends Component {
                 {this.props.forecast.map((day) => {
                     const weatherIcon = day.weather[0].icon
                     const icon = wiIcons[weatherIcon]
+                    const roundedTemp = Math.round(day.main.temp)
 
                     return (
                         <div className="fiveDay">
@@ -43,7 +44,7 @@ export default class FiveDayForecast extends Component {
                             <div className="futureSeparator"></div>
                             <div className="futureTempContainer">
                                 <p className="futureTemp">
-                                    {day.main.temp}
+                                    {roundedTemp}
                                 </p>
                             </div>
                         </div>
