@@ -3,7 +3,8 @@ const Schema = mongoose.Schema
 
 const iconSchema = new Schema ({
     name: String, 
-    url: String
+    url: String, 
+    iconId: String
 })
 
 const iconModel = mongoose.model('icons', iconSchema)

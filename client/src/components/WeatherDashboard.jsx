@@ -60,15 +60,22 @@ export default class WeatherDashboard extends Component {
                 console.log(res.data)
                 // this.setState(res.data)
                 const filteredForecast = this.filterFiveDay(res.data.list)
-                this.setState({fiveDay: filteredForecast})
+                const newState = {...this.state}
+                newState.fiveDay = filteredForecast
+                this.setState(newState)
+                console.log('newState', newState)
                 console.log('filteredForecast', filteredForecast)
+            })
+            .catch((error) => {
+                console.log('Error getting five day forecast')
+                console.log(error)
             })
     }
 
-    roundTemperature = () => {
-        Math.round(this.state.temp)
+    // roundTemperature = () => {
+    //     Math.round(this.state.temp)
         
-    }
+    // }
 
     render() {
         return (
@@ -100,7 +107,6 @@ export default class WeatherDashboard extends Component {
                 </div>
                 <div>
                     <FiveDayForeCast
-                    zipCode={this.state.zipCode}
                     forecast={this.state.fiveDay}/>
                 </div>
             </div>
