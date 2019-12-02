@@ -19,7 +19,7 @@ export default class TodaysWeather extends Component {
                         </p>
                         <div className="currentLocation">
                             <p>
-                                {this.props.city}, {this.props.country}
+                                {this.props.city}
                             </p>
                         </div>
                     </div>
