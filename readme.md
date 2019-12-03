@@ -1,31 +1,17 @@
-# mern-template-project
+# Weather Week
 
-# Setup A New Project From This Template
-
-If you are starting a new project do the following:
-
-1. copy/download this directory to where you new project is located and rename
-   it to the name of your project.
-1. change your directory (`cd`) into the copied project template
-1. `npm install`
-1. `npm run dev`
-1. Open a new browser window and navigate to the URL http://localhost:3000/
-    here you should see `hello world` displayed after page load
-    updates should show up here automatically
-1. see the `client/src` `readme.md` file for more information on the react project
-
-# Setup A New Project Without This Template
-
-If you want to start a project without using this template directory do the
-following:
+Everyone needs to know the weather. Weather Week allows you to see both the current weather and a five day forecast by simply entering your zip code. This app will be free to use for anyone who would like to access it. 
 
 
-1. `mkdir <project-name>`
-1. `cd <project-name>`
-1. `echo "# <project-name>" > readme.md`
-1. `git init`
-1. `git add readme.md `
-1. `git commit -m "init repo with readme.md"`
-1. `npm init`
-1. `mkdir models views controllers`
-1. `touch ./server.js`
+[Project Board](https://trello.com/b/fsETafK3/5-day)
+
+[Deployed App](https://week-of-weather.herokuapp.com)
+
+# ERD 
+![ERD](/Images/IMG-3064.jpg)
+
+# Wireframes 
+![Wireframe](/Images/IMG-3063.jpg)
+
+
+
