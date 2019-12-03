@@ -8,10 +8,10 @@ Everyone needs to know the weather. Weather Week allows you to see both the curr
 [Deployed App](https://week-of-weather.herokuapp.com)
 
 # ERD 
-![ERD](/Images/IMG-3064.jpg)
+![ERD](/Images/IMG_3064.JPG)
 
 # Wireframes 
-![Wireframe](/Images/IMG-3063.jpg)
+![Wireframe](/Images/IMG_3063.JPG)
 
 
 
