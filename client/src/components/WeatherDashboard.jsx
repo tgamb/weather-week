@@ -23,24 +23,26 @@ const wiIcons = {
     '13n': 'wi-night-alt-snow',
     '50d': 'wi-day-fog',
     '50n': 'wi-night-fog'
-  };
+};
 
 export default class WeatherDashboard extends Component {
     state = {
-        temp:'', 
-        city:'', 
-        country:'', 
-        forecast: '', 
-        icon:'', 
-        zipCode: '30327', 
-        date: '', 
+        temp: '',
+        city: '',
+        country: '',
+        forecast: '',
+        icon: '',
+        zipCode: '30327',
+        date: '',
         fiveDay: []
     }
-    
+
     componentDidMount() {
-        this.getWeather() 
+        this.getWeather()
         this.getFiveDay()
     }
+
+
 
     getWeather = () => {
         axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipCode},us&units=imperial&APPID=1aa2fe15d0a2c23dca1307993fb1d38c`)
@@ -50,15 +52,15 @@ export default class WeatherDashboard extends Component {
                 const weatherIcon = res.data.weather[0].icon
                 const roundedTemp = Math.round(res.data.main.temp)
                 this.setState({
-                    temp: roundedTemp, 
-                    city: res.data.name, 
-                    country: res.data.sys.country, 
-                    forecast: res.data.weather[0].main, 
-                    icon: wiIcons[weatherIcon], 
+                    temp: roundedTemp,
+                    city: res.data.name,
+                    country: res.data.sys.country,
+                    forecast: res.data.weather[0].main,
+                    icon: wiIcons[weatherIcon],
                 })
             })
     }
-    
+
     // newZipCode = this.state.zipCode
 
     postZipCode = () => {
@@ -68,14 +70,14 @@ export default class WeatherDashboard extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({zipCode: event.target.value})
+        this.setState({ zipCode: event.target.value })
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-            this.getWeather()
-            this.getFiveDay()
-            this.postZipCode()
+        this.getWeather()
+        this.getFiveDay()
+        this.postZipCode()
     }
 
     filterFiveDay = (forecastList) => {
@@ -94,7 +96,7 @@ export default class WeatherDashboard extends Component {
                 console.log(res.data)
                 // this.setState(res.data)
                 const filteredForecast = this.filterFiveDay(res.data.list)
-                const newState = {...this.state}
+                const newState = { ...this.state }
                 newState.fiveDay = filteredForecast
                 this.setState(newState)
                 console.log('newState', newState)
@@ -108,7 +110,7 @@ export default class WeatherDashboard extends Component {
 
     // roundTemperature = () => {
     //     Math.round(this.state.temp)
-        
+
     // }
 
     render() {
@@ -120,28 +122,28 @@ export default class WeatherDashboard extends Component {
                     </div>
                     <form onSubmit={this.handleSubmit}>
                         <input type="text"
-                        name="zipCode"
-                        placeholder="Zip Code"
-                        value={this.state.zipCode}
-                        onChange={this.handleChange}
+                            name="zipCode"
+                            placeholder="Zip Code"
+                            value={this.state.zipCode}
+                            onChange={this.handleChange}
                         />
                     </form>
                 </div>
                 <div>
                     <TodaysWeather
-                    temp={this.state.temp}
-                    city={this.state.city}
-                    country={this.state.country}
-                    forecast={this.state.forecast}
-                    icon={this.state.icon}
-                    /> 
+                        temp={this.state.temp}
+                        city={this.state.city}
+                        country={this.state.country}
+                        forecast={this.state.forecast}
+                        icon={this.state.icon}
+                    />
                 </div>
                 <div>
                     {/* <LocationImage/>  */}
                 </div>
                 <div>
                     <FiveDayForeCast
-                    forecast={this.state.fiveDay}/>
+                        forecast={this.state.fiveDay} />
                 </div>
             </div>
         )

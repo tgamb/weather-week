@@ -36,7 +36,16 @@
     font-size: 20px; 
     margin-bottom: 0px;
     margin-left: 15px;
-    justify-content: center;
+    justify-content: center; 
+    padding-top: 10px; 
+}
+
+.weekday {
+    margin-left: 15px; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    padding-top: 5px; 
+    font-weight: 200; 
 }
 
 .futureForecast {
